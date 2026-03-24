@@ -1,0 +1,13 @@
+#!/bin/bash
+SDL_PATH="/c/Users/biodu/IT366/SDL2-2.32.10"
+SDL_MIXER_PATH="/c/Users/biodu/IT366/SDL2_mixer-2.8.1"
+SDL_IMAGE_PATH="/c/Users/biodu/IT366/SDL2_image-2.8.8"
+SDL_TTF_PATH="/c/Users/biodu/IT366/SDL2_ttf-2.24.0"
+
+if [ "$1" = "--cflags" ]; then
+    echo "-I$SDL_PATH/include -I$SDL_PATH/include/SDL2 -I$SDL_MIXER_PATH/include -I$SDL_MIXER_PATH/include/SDL2 -I$SDL_IMAGE_PATH/include -I$SDL_IMAGE_PATH/include/SDL2 -I$SDL_TTF_PATH/include -I$SDL_TTF_PATH/include/SDL2 -Dmain=SDL_main"
+elif [ "$1" = "--libs" ]; then
+    echo "-L$SDL_PATH/lib -L$SDL_PATH/lib/x64 -L$SDL_MIXER_PATH/lib -L$SDL_MIXER_PATH/lib/x64 -L$SDL_IMAGE_PATH/lib -L$SDL_IMAGE_PATH/lib/x64 -L$SDL_TTF_PATH/lib -L$SDL_TTF_PATH/lib/x64 -lmingw32 -lSDL2main -lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_ttf"
+elif [ "$1" = "--version" ]; then
+    echo "2.32.10"
+fi
